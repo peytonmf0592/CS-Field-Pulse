@@ -1,0 +1,208 @@
+/* CS Field Pulse Login Page Styles */
+
+body.login {
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background gradient */
+body.login::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Tesseract watermark */
+body.login::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M100 20 L180 60 L180 140 L100 180 L20 140 L20 60 Z" fill="none" stroke="%2300ff88" stroke-width="0.5" opacity="0.1"/><path d="M100 40 L160 70 L160 130 L100 160 L40 130 L40 70 Z" fill="none" stroke="%2300ff88" stroke-width="0.5" opacity="0.1"/></svg>') no-repeat center;
+    background-size: contain;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#login {
+    position: relative;
+    z-index: 1;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+/* Logo area */
+.login h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login h1 a {
+    background-image: none !important;
+    text-indent: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(135deg, #ffffff 0%, #00ff88 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+}
+
+/* Login form */
+#loginform, #lostpasswordform, #registerform {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+}
+
+/* Form labels */
+.login label {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+/* Input fields */
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus,
+.login input[type="email"]:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #00ff88;
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+    outline: none;
+}
+
+/* Remember me checkbox */
+.login .forgetmenot {
+    color: #ffffff;
+}
+
+/* Submit button */
+.login .button-primary {
+    background: #00ff88;
+    border: none;
+    border-radius: 8px;
+    color: #0a0a0a;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.login .button-primary:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+}
+
+/* Links */
+.login #nav a,
+.login #backtoblog a {
+    color: #00ff88;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login #nav a:hover,
+.login #backtoblog a:hover {
+    color: #ffffff;
+}
+
+.login #nav,
+.login #backtoblog {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Error messages */
+.login .message,
+.login .notice,
+.login #login_error {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.login #login_error {
+    border-color: rgba(255, 68, 68, 0.5);
+    background: rgba(255, 68, 68, 0.1);
+}
+
+/* Particles effect */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.login-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #00ff88;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 20s infinite linear;
+}
+
+/* Add particles via JavaScript */
+body.login .login-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+body.login .login-particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+body.login .login-particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+body.login .login-particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+body.login .login-particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+body.login .login-particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+body.login .login-particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+body.login .login-particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+body.login .login-particle:nth-child(9) { left: 90%; animation-delay: 16s; }
+body.login .login-particle:nth-child(10) { left: 95%; animation-delay: 18s; }

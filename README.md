@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CS Field Pulse - Next.js
+
+A modern field engagement tracking and sentiment analysis platform built with Next.js, Supabase, and TypeScript.
+
+## Features
+
+- 🔐 **Authentication System** - Secure login with Supabase Auth
+- 🎨 **Glass Morphism UI** - Modern design with animated particle backgrounds
+- 📊 **Dashboard Analytics** - Track tours, engagements, and sentiment metrics
+- 🎤 **Voice Recording** - Capture voice notes during engagements
+- 📸 **Photo Upload** - Add visual context to engagement records
+- 😊 **Sentiment Analysis** - Categorize feedback as Promoter/Passive/Detractor
+- 📱 **Mobile Responsive** - Full functionality across all devices
+- 🔄 **Real-time Updates** - Live data synchronization with Supabase
+- 📥 **Export Capabilities** - Download data in CSV, PDF, and Excel formats
+
+## Tech Stack
+
+- **Frontend:** Next.js 15, React 19, TypeScript
+- **Styling:** Tailwind CSS, Framer Motion
+- **Backend:** Supabase (PostgreSQL, Auth, Storage, Realtime)
+- **Charts:** Recharts
+- **Icons:** Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+- Supabase account and project
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd CSFPNJS
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file with your Supabase credentials:
 
-## Learn More
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+OPENAI_API_KEY=your_openai_api_key_here (optional)
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Set up Supabase database:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the SQL commands in `supabase/schema.sql` in your Supabase SQL editor to create the necessary tables and policies.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Run the development server:
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── app/                    # Next.js app directory
+│   ├── login/             # Authentication pages
+│   ├── dashboard/         # Main application pages
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── ui/               # Reusable UI components
+│   └── Navigation.tsx    # Main navigation
+├── lib/                   # Utility functions
+│   ├── supabase/         # Supabase client configuration
+│   └── utils.ts          # Helper functions
+├── types/                 # TypeScript type definitions
+└── supabase/             # Database schema and migrations
+```
+
+## User Roles
+
+The application supports three user roles:
+
+- **Admin** - Full access to all features and data
+- **Field Rep** - Can create tours, add engagements, manage their own data
+- **Viewer** - Read-only access to view reports and analytics
+
+## Development Commands
+
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run start      # Start production server
+npm run lint       # Run ESLint
+```
+
+## Database Schema
+
+The application uses the following main tables:
+
+- **users** - User profiles linked to Supabase Auth
+- **tours** - Field tour/event records
+- **engagements** - Individual participant interactions
+- **follow_ups** - Action items from engagements
+
+## Security
+
+- Row Level Security (RLS) policies enforce data access rules
+- Authentication required for all application routes
+- Secure file uploads to Supabase Storage
+- Input sanitization and validation
+
+## Deployment
+
+The application can be deployed to:
+
+- Vercel (recommended for Next.js)
+- Netlify
+- Any Node.js hosting platform
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
+
+## License
+
+This project is proprietary software.
+
+## Support
+
+For issues or questions, please contact the development team.

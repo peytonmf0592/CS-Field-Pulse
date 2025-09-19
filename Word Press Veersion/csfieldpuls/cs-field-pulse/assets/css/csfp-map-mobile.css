@@ -1,0 +1,73 @@
+/* CS Field Pulse - Simple Mobile Map Styles */
+
+/* Mobile Map Container */
+@media (max-width: 640px) {
+    /* Map wrapper */
+    .csfp-map-container-compact {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Map element */
+    #csfp-map {
+        width: 100% !important;
+        height: 320px !important;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #0a0a0a;
+        position: relative;
+    }
+    
+    /* Simple touch hint that disappears after first interaction */
+    #csfp-map::after {
+        content: 'Use two fingers to move map';
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    #csfp-map.touched::after {
+        opacity: 0;
+    }
+    
+    /* Ensure Google Maps controls are visible */
+    #csfp-map .gm-style-mtc {
+        margin-top: 10px !important;
+        margin-right: 10px !important;
+    }
+    
+    #csfp-map .gmnoprint {
+        margin-right: 10px !important;
+    }
+}
+
+/* Fix for heatmap rendering */
+#csfp-map canvas {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Ensure dark theme persists */
+#csfp-map {
+    background-color: #0a0a0a !important;
+}
+
+/* Info window styling */
+.gm-style-iw-d {
+    overflow: auto !important;
+}
+
+.gm-style-iw-c {
+    border-radius: 8px !important;
+}

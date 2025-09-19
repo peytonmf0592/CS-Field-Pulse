@@ -1,0 +1,131 @@
+/* CS Field Pulse - Navigation Updates */
+
+/* Logout button at top-right */
+.csfp-logout-top {
+    position: fixed;
+    top: 0.35rem;
+    right: 1rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #9AA3AF;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    z-index: 1002; /* Above welcome bar */
+}
+
+.csfp-logout-top:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Export Visits in navigation */
+.csfp-nav-export {
+    background: none;
+    border: none;
+    color: var(--csfp-white);
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.csfp-nav-export:hover {
+    color: var(--csfp-green);
+}
+
+/* Adjust nav user section */
+.csfp-nav-user {
+    margin-left: auto;
+    margin-right: 120px; /* Space for logout button */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Navigation bar adjustments */
+.csfp-nav {
+    position: relative;
+    padding-right: 120px; /* Space for logout button */
+}
+
+/* Mobile styles */
+@media (max-width: 640px) {
+    /* Mobile navigation */
+    .csfp-nav {
+        flex-direction: column;
+        padding: 1rem;
+        padding-right: 1rem;
+        padding-top: 3rem; /* Space for logout */
+    }
+    
+    /* Logout button on mobile */
+    .csfp-logout-top {
+        position: fixed;
+        top: 0.4rem;
+        right: 0.75rem;
+        padding: 0.4rem 1rem;
+        font-size: 13px;
+        z-index: 1001;
+    }
+    
+    /* Export button in nav */
+    .csfp-nav-export {
+        width: 100%;
+        padding: 0.75rem;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 0.5rem;
+    }
+    
+    /* Nav user on mobile */
+    .csfp-nav-user {
+        width: 100%;
+        margin: 0;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+    }
+    
+    /* Nav items on mobile */
+    .csfp-nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+    
+    /* Hide duplicate export button if it exists */
+    #csfp-export-visits {
+        display: none !important;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 641px) {
+    /* Ensure nav items align properly */
+    .csfp-nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .csfp-nav-logo {
+        margin-right: 2rem;
+    }
+    
+    /* Export button styling to match other nav items */
+    .csfp-nav-export {
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+}

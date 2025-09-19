@@ -1,0 +1,208 @@
+/* CS Field Pulse - Compact Layout Adjustments */
+
+/* Welcome message at the very top */
+.csfp-welcome-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.98);
+    color: #9AA3AF;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    text-align: center !important;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust container for welcome bar */
+.csfp-container {
+    padding-top: 2.5rem !important; /* Space for fixed welcome bar */
+    position: relative !important;
+}
+
+/* Make logo bigger - now handled by csfp-nav-redesign.css */
+/* .csfp-nav-logo styles moved to nav-redesign for consistency */
+
+/* Compact navigation bar */
+.csfp-nav {
+    padding: 0.75rem 1.25rem !important;
+    gap: 0.75rem !important;
+}
+
+.csfp-nav-item {
+    padding: 0.5rem 0.875rem !important;
+    font-size: 14px !important;
+}
+
+/* Compact action panel */
+.csfp-action-panel {
+    padding: 0.875rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Smaller dashboard title */
+.csfp-title[data-page="dashboard"] {
+    font-size: 20px !important;
+    margin: 0.4rem 0 !important;
+}
+
+/* Compact view controls */
+.csfp-glass.csfp-card {
+    padding: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Compact stats grid */
+.csfp-stats-grid {
+    gap: 0.75rem !important;
+    margin: 0.75rem 0 !important;
+}
+
+.csfp-stat-card {
+    padding: 0.875rem 0.75rem !important;
+}
+
+.csfp-stat-number {
+    font-size: 1.75rem !important;
+}
+
+.csfp-stat-label {
+    font-size: 0.8rem !important;
+}
+
+/* Compact dashboard sections */
+.csfp-dashboard-compact {
+    gap: 0.75rem !important;
+    margin-top: 0.75rem !important;
+}
+
+.csfp-chart-container-compact,
+.csfp-map-container-compact {
+    padding: 0.875rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.csfp-chart-container-compact h3,
+.csfp-map-container-compact h3 {
+    font-size: 16px !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+    /* Welcome message on mobile */
+    .csfp-welcome-top {
+        padding: 0.4rem 0.75rem;
+        font-size: 13px;
+        /* Remove padding-right to keep centered */
+    }
+    
+    /* Adjust container padding on mobile */
+    .csfp-container {
+        padding: 0.75rem !important;
+        padding-top: calc(env(safe-area-inset-top) + 2.5rem) !important;
+    }
+    
+    /* Logo size on mobile */
+    .csfp-nav-logo {
+        height: 40px !important;
+        margin: 0.5rem auto !important;
+        display: block !important;
+    }
+    
+    /* Navigation on mobile */
+    .csfp-nav {
+        padding: 0.5rem !important;
+        padding-top: 2.5rem !important; /* Space for logout */
+    }
+    
+    /* Action panel on mobile */
+    .csfp-action-panel {
+        padding: 0.75rem !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    .csfp-action-panel > div {
+        flex-direction: row !important; /* Keep buttons side by side */
+        gap: 0.5rem !important;
+    }
+    
+    /* Button sizes on mobile */
+    #quick-visit-btn {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 15px !important;
+        min-height: 44px !important;
+        flex: 1 !important;
+    }
+    
+    #quick-visit-btn span:first-child {
+        font-size: 18px !important;
+    }
+    
+    #start-market-tour-btn {
+        padding: 0.65rem 1rem !important;
+        font-size: 14px !important;
+        min-height: 44px !important;
+        flex: 0.8 !important;
+    }
+    
+    /* Dashboard title on mobile */
+    .csfp-title[data-page="dashboard"] {
+        font-size: 18px !important;
+        margin: 0.3rem 0 !important;
+        text-align: center;
+    }
+    
+    /* View controls on mobile */
+    .csfp-filter-label {
+        font-size: 13px !important;
+    }
+    
+    .csfp-filter-select {
+        padding: 0.6rem !important;
+        font-size: 15px !important;
+    }
+    
+    /* Stats on mobile */
+    .csfp-stat-number {
+        font-size: 1.5rem !important;
+    }
+    
+    .csfp-stat-label {
+        font-size: 0.75rem !important;
+    }
+    
+    /* Ensure logout stays in corner */
+    .csfp-logout-top {
+        top: 0.4rem !important;
+        right: 0.5rem !important;
+        padding: 0.35rem 0.75rem !important;
+        font-size: 12px !important;
+        z-index: 1001 !important;
+    }
+}
+
+/* Desktop adjustments for compact view */
+@media (min-width: 641px) {
+    /* Welcome bar on desktop - keep centered */
+    .csfp-welcome-top {
+        text-align: center !important;
+    }
+    
+    /* Logo on desktop */
+    .csfp-nav-logo {
+        margin-right: 1.5rem !important;
+    }
+    
+    /* Keep buttons horizontal on desktop */
+    .csfp-action-panel > div {
+        justify-content: center !important;
+    }
+}

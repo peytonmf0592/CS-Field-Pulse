@@ -1,0 +1,445 @@
+/* CS Field Pulse - iOS Safari Layout Fixes (iOS 15+) */
+/* This file fixes all clipping issues without affecting desktop */
+
+/* ========================================
+   CSS Variables for Z-Index and Layout
+   ======================================== */
+:root {
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-header: 1000;
+    --z-popover: 9999;
+    --z-modal: 10000;
+    --z-search: 9999;
+    --gutter: 16px;
+}
+
+/* ========================================
+   Global iOS Optimizations
+   ======================================== */
+
+/* Dynamic viewport height support */
+@supports (height: 100dvh) {
+    .csfp-container,
+    body,
+    #csfp-main {
+        min-height: 100dvh;
+    }
+}
+
+/* Prevent text size adjustment */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent input zoom on iOS */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea {
+    font-size: 16px !important;
+}
+
+/* ========================================
+   Mobile-Only Fixes (≤640px)
+   ======================================== */
+@media (max-width: 640px) {
+    /* Safe area padding for body */
+    body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    /* Main container with proper gutters */
+    .csfp-container {
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
+        padding-top: calc(var(--gutter) + env(safe-area-inset-top));
+        padding-bottom: calc(var(--gutter) + env(safe-area-inset-bottom));
+        overflow-x: hidden;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* ========================================
+       Header/Logo Fix - Fully Visible
+       ======================================== */
+    .csfp-navigation {
+        position: sticky;
+        top: calc(8px + env(safe-area-inset-top));
+        z-index: var(--z-header);
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        margin: 0 calc(-1 * var(--gutter)) 1rem calc(-1 * var(--gutter));
+        padding: 1rem var(--gutter);
+    }
+    
+    /* Logo row layout */
+    .csfp-nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .csfp-nav-logo img,
+    .csfp-nav-logo svg {
+        max-width: 72%;
+        height: auto;
+        display: block;
+    }
+    
+    /* Avoid negative margins at top */
+    .csfp-title,
+    .csfp-dashboard-hero {
+        margin-top: 12px;
+    }
+    
+    /* Navigation links */
+    .csfp-nav-links {
+        display: flex;
+        gap: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+    }
+    
+    .csfp-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .csfp-nav-links a {
+        flex-shrink: 0;
+        padding: 0.5rem 1rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+    
+    /* ========================================
+       Global Search Row Fix
+       ======================================== */
+    #csfp-quick-search-container {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    
+    .csfp-quick-search {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .csfp-quick-search-wrapper {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .csfp-quick-search-input-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .csfp-quick-search-input {
+        flex: 1 1 260px;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    
+    .csfp-quick-search-filter {
+        flex: 0 0 auto;
+        display: flex;
+        gap: 4px;
+    }
+    
+    /* Search toggle buttons */
+    .csfp-type-btn {
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* ========================================
+       Toolbar/Export Button Fix
+       ======================================== */
+    .csfp-dashboard-actions,
+    .csfp-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: stretch;
+        margin: 1rem 0;
+    }
+    
+    .csfp-export-btn,
+    .csfp-btn-export,
+    .csfp-btn-record,
+    .csfp-btn-tour {
+        flex: 1 1 200px;
+        min-width: 0;
+        min-height: 44px;
+        box-sizing: border-box;
+    }
+    
+    /* Export controls section */
+    .csfp-export-controls {
+        margin: 1rem 0;
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .csfp-export-controls > * {
+        flex: 1 1 200px;
+        min-width: 0;
+    }
+    
+    /* ========================================
+       Cards & Panels - No Clipping
+       ======================================== */
+    .csfp-glass,
+    .csfp-panel,
+    .csfp-card {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* Replace outline rings with borders */
+    .csfp-card,
+    .csfp-activity-card {
+        border: 2px solid var(--csfp-green, #00ff88);
+        border-radius: 14px;
+        outline: none;
+    }
+    
+    /* ========================================
+       Recent Activity Fix - Bottom Padding
+       ======================================== */
+    .csfp-activity-feed,
+    .csfp-recent-activity {
+        padding-bottom: calc(24px + env(safe-area-inset-bottom));
+        margin-bottom: calc(24px + env(safe-area-inset-bottom));
+    }
+    
+    /* Activity cards */
+    .csfp-activity-card {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0.75rem 0;
+        padding: 16px;
+    }
+    
+    /* Load More button positioning */
+    .csfp-load-more {
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: calc(24px + env(safe-area-inset-bottom));
+        min-height: 44px;
+    }
+    
+    /* Ensure last card is visible */
+    .csfp-activity-feed > *:last-child {
+        margin-bottom: calc(24px + env(safe-area-inset-bottom));
+    }
+    
+    /* ========================================
+       Charts & Map - Honor Gutters
+       ======================================== */
+    .csfp-chart-container,
+    .csfp-chart,
+    #map-container,
+    .csfp-map {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+    
+    #map-container {
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    /* Chart canvas responsive */
+    .csfp-chart-container canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Charts row layout */
+    .csfp-charts-row {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    /* ========================================
+       Kill Overflow Culprits
+       ======================================== */
+    .csfp-full-bleed,
+    .csfp-bg-layer {
+        max-width: 100%;
+    }
+    
+    /* Remove problematic transforms and overflow on mobile */
+    .csfp-container > * {
+        transform: none !important;
+    }
+    
+    /* Ensure no parent has overflow:hidden that clips content */
+    .csfp-container,
+    .csfp-dashboard,
+    .csfp-content {
+        overflow: visible;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+/* ========================================
+   Popovers Above All UI
+   ======================================== */
+.csfp-popover,
+.csfp-search-popover,
+.csfp-search-portal {
+    position: fixed !important;
+    z-index: var(--z-popover) !important;
+    max-height: 60vh;
+    overflow: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure popovers are rendered to body */
+body > .csfp-search-portal,
+body > .csfp-popover {
+    position: fixed !important;
+    z-index: var(--z-popover) !important;
+}
+
+/* ========================================
+   Bottom Sheet Modals (iOS style)
+   ======================================== */
+@media (max-width: 768px) {
+    .csfp-modal.active .csfp-modal-content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        max-width: 100%;
+        width: 100%;
+        height: min(78dvh, 640px);
+        border-radius: 16px 16px 0 0;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom));
+        transform: translateY(0);
+        z-index: var(--z-modal);
+    }
+}
+
+/* ========================================
+   iOS Keyboard Handling
+   ======================================== */
+@supports (height: 100vh) {
+    .csfp-search-portal.keyboard-visible {
+        max-height: calc(var(--visual-viewport-height, 100vh) - var(--keyboard-height, 0px) - 100px);
+    }
+    
+    .csfp-modal.keyboard-visible .csfp-modal-content {
+        bottom: var(--keyboard-height, 0px);
+        transition: bottom 0.2s ease-out;
+    }
+}
+
+/* ========================================
+   Touch Optimizations
+   ======================================== */
+@media (max-width: 768px) {
+    /* Remove tap highlight */
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    /* Smooth scrolling */
+    .csfp-container,
+    .csfp-modal-content,
+    .csfp-search-portal,
+    .csfp-list,
+    .csfp-activity-feed {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Minimum touch targets */
+    button,
+    .csfp-btn,
+    .csfp-btn-sm,
+    .csfp-btn-icon,
+    .csfp-preset-chip,
+    .csfp-type-btn,
+    .csfp-tab,
+    a.csfp-nav-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   Performance Optimizations
+   ======================================== */
+@media (max-width: 768px) {
+    /* Hardware acceleration */
+    .csfp-list,
+    .csfp-activity-feed,
+    .csfp-container {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        will-change: scroll-position;
+    }
+    
+    /* Reduce shadows on scroll */
+    .scrolling .csfp-card {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ========================================
+   Fix 100vh Issues
+   ======================================== */
+@media (max-width: 768px) {
+    /* Replace 100vh with dynamic viewport height */
+    .csfp-full-height {
+        min-height: 100dvh;
+        min-height: -webkit-fill-available;
+    }
+    
+    .csfp-container {
+        min-height: 100dvh;
+        min-height: -webkit-fill-available;
+    }
+}

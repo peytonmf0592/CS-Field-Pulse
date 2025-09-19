@@ -1,0 +1,113 @@
+/* CS Field Pulse - Clean Page Headers and Icons */
+
+/* Remove icon backgrounds and fix alignment */
+.csfp-page-header .icon,
+.csfp-page-title .icon,
+.csfp-section-header .icon,
+.csfp-header-icon {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    margin-right: 8px !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+}
+
+/* Clean page headers */
+.csfp-page-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.5rem 1rem !important;
+    margin-bottom: 1.5rem !important;
+    background: linear-gradient(135deg, rgba(32, 227, 123, 0.1) 0%, rgba(32, 227, 123, 0.02) 100%) !important;
+    border: 1px solid rgba(32, 227, 123, 0.2) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.csfp-page-title {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: var(--csfp-green) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-shadow: 0 2px 10px rgba(32, 227, 123, 0.3) !important;
+}
+
+/* Active navigation item styling */
+.csfp-nav-item.active {
+    background: linear-gradient(135deg, rgba(32, 227, 123, 0.2) 0%, rgba(32, 227, 123, 0.1) 100%) !important;
+    color: var(--csfp-green) !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(32, 227, 123, 0.3) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Visits page specific - separate Visit History from Record Visit */
+.csfp-visits-header {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+}
+
+.csfp-visits-title {
+    padding: 1rem 1.5rem !important;
+    background: rgba(26, 26, 26, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+}
+
+.csfp-visits-title h2 {
+    margin: 0 !important;
+    font-size: 24px !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+.csfp-visits-actions {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+/* Hide duplicate icons */
+.csfp-dashboard .csfp-page-header .icon:before,
+.csfp-inspectors .csfp-page-header .icon:before,
+.csfp-adjusters .csfp-page-header .icon:before,
+.csfp-visits .csfp-page-header .icon:before {
+    content: '' !important;
+    display: none !important;
+}
+
+/* Remove icon containers if they have backgrounds */
+span[style*="background"],
+.icon[style*="background"] {
+    background: transparent !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .csfp-page-title {
+        font-size: 24px !important;
+    }
+    
+    .csfp-nav-item.active {
+        font-size: 14px !important;
+        padding: 0.5rem 0.8rem !important;
+    }
+    
+    .csfp-page-header {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+}

@@ -1,0 +1,248 @@
+/* CS Field Pulse - Dashboard Mobile Optimizations */
+
+/* ========================================
+   Two-Window Layout Mobile Styles
+   ======================================== */
+@media (max-width: 640px) {
+    /* View Controls Section */
+    .csfp-glass.csfp-card:not(.csfp-action-panel) {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Action Panel Section */
+    .csfp-action-panel {
+        padding: 1.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Filter group */
+    .csfp-filter-group {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    /* View toggle */
+    .csfp-view-toggle {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+    
+    /* Market/RFM selector */
+    #market-selector,
+    #rfm-selector {
+        width: 100% !important;
+    }
+    
+    .csfp-filter-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 14px;
+        color: #9AA3AF;
+    }
+    
+    /* Market dropdown - limited height with scroll */
+    .csfp-filter-select {
+        width: 100% !important;
+        max-height: 200px !important; /* Limit dropdown height */
+        padding: 0.75rem !important;
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        background: rgba(26, 26, 26, 0.95) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        color: #fff !important;
+    }
+    
+    /* Custom dropdown styling for better mobile UX */
+    select.csfp-filter-select {
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239AA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 36px !important;
+    }
+    
+    /* Option styling */
+    .csfp-filter-select option {
+        padding: 8px !important;
+        background: #1a1a1a !important;
+    }
+}
+
+/* ========================================
+   Action Buttons - Two-Window Layout
+   ======================================== */
+@media (max-width: 640px) {
+    /* Action panel button container */
+    .csfp-action-panel > div {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+    
+    /* Export button at page top-right */
+    #csfp-export-visits {
+        position: fixed !important;
+        top: env(safe-area-inset-top, 0) !important;
+        right: env(safe-area-inset-right, 0.75rem) !important;
+        padding: 0.5rem 0.875rem !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        background: rgba(26, 26, 26, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        color: #9AA3AF !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        min-height: 36px !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.3rem !important;
+        z-index: 100 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+        margin-top: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+    
+    #csfp-export-visits:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #fff !important;
+    }
+    
+    #csfp-export-visits span {
+        font-size: 14px !important;
+    }
+    
+    /* Primary button - Record Visit (most prominent) */
+    #quick-visit-btn {
+        width: 100% !important;
+        padding: 1.25rem !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        background: var(--csfp-green) !important;
+        color: var(--csfp-black) !important;
+        border: none !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        min-height: 56px !important;
+        box-shadow: 0 4px 16px rgba(32, 227, 123, 0.35) !important;
+    }
+    
+    #quick-visit-btn:hover,
+    #quick-visit-btn:active {
+        background: #1acc6f !important;
+        transform: scale(0.98);
+    }
+    
+    #quick-visit-btn span:first-child {
+        font-size: 22px !important;
+        line-height: 1 !important;
+    }
+    
+    /* Secondary button - Start Market Tour */
+    #start-market-tour-btn {
+        width: 100% !important;
+        padding: 0.875rem !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: #9AA3AF !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.4rem !important;
+        min-height: 46px !important;
+    }
+    
+    #start-market-tour-btn:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #fff !important;
+    }
+    
+    #start-market-tour-btn span {
+        font-size: 16px !important;
+    }
+    
+    /* Remove any duplicate Market Tour buttons */
+    .csfp-btn-tour:not(#start-market-tour-btn) {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   Compact View Mode - Now handled by csfp-compact-layout.css
+   ======================================== */
+
+/* ========================================
+   Touch-Optimized Interactions
+   ======================================== */
+@media (max-width: 640px) {
+    /* Larger touch targets */
+    button,
+    .csfp-btn,
+    select {
+        min-height: 44px !important;
+        cursor: pointer !important;
+    }
+    
+    /* Active states for better feedback */
+    button:active,
+    .csfp-btn:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Disable hover effects on touch devices */
+    @media (hover: none) {
+        button:hover,
+        .csfp-btn:hover {
+            transform: none;
+        }
+    }
+}
+
+/* ========================================
+   Fix overlapping elements
+   ======================================== */
+@media (max-width: 640px) {
+    /* Ensure elements don't overlap */
+    .csfp-glass.csfp-card {
+        position: relative;
+        z-index: 1;
+    }
+    
+    #csfp-quick-search-container {
+        position: relative;
+        z-index: 10;
+        margin-bottom: 1rem;
+    }
+    
+    /* Prevent button text from wrapping */
+    .csfp-btn {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* Adjust for very small screens */
+    @media (max-width: 380px) {
+        .csfp-secondary-actions {
+            grid-template-columns: 1fr !important;
+        }
+        
+        #csfp-export-visits,
+        #start-market-tour-btn {
+            font-size: 13px !important;
+        }
+    }
+}

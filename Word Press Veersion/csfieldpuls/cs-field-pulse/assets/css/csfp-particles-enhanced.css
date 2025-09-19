@@ -1,0 +1,170 @@
+/* CS Field Pulse - Enhanced Particle Effects */
+
+/* Particle container */
+.csfp-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* Ensure container has proper positioning */
+.csfp-container,
+.csfp-dashboard,
+.csfp-inspectors,
+.csfp-adjusters,
+.csfp-visits,
+.csfp-profile {
+    position: relative !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Individual particles */
+.csfp-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(32, 227, 123, 0.5);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatUpSlow 60s infinite linear;
+    will-change: transform;
+    filter: blur(0.5px);
+    box-shadow: 0 0 6px rgba(32, 227, 123, 0.3);
+}
+
+/* Slower, smoother animation */
+@keyframes floatUpSlow {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(90vh) translateX(-10px) scale(1);
+        opacity: 0.3;
+    }
+    20% {
+        transform: translateY(80vh) translateX(10px) scale(1.1);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(70vh) translateX(-15px) scale(1);
+        opacity: 0.3;
+    }
+    40% {
+        transform: translateY(60vh) translateX(5px) scale(0.9);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(50vh) translateX(-10px) scale(1);
+        opacity: 0.3;
+    }
+    60% {
+        transform: translateY(40vh) translateX(15px) scale(1.1);
+        opacity: 0.4;
+    }
+    70% {
+        transform: translateY(30vh) translateX(-5px) scale(1);
+        opacity: 0.3;
+    }
+    80% {
+        transform: translateY(20vh) translateX(10px) scale(0.9);
+        opacity: 0.2;
+    }
+    90% {
+        transform: translateY(10vh) translateX(-10px) scale(0.8);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Alternative animation for variety */
+.csfp-particle:nth-child(even) {
+    animation: floatUpSlowAlt 70s infinite linear;
+}
+
+@keyframes floatUpSlowAlt {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(75vh) translateX(20px) rotate(90deg) scale(1);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(50vh) translateX(-20px) rotate(180deg) scale(1.2);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translateY(25vh) translateX(20px) rotate(270deg) scale(1);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(0) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Diagonal floating for some particles */
+.csfp-particle:nth-child(3n) {
+    animation: floatDiagonal 80s infinite linear;
+}
+
+@keyframes floatDiagonal {
+    0% {
+        transform: translate(0, 100vh) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(50vw, 50vh) scale(1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(100vw, -10vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .csfp-particles {
+        opacity: 0.7; /* Slightly reduce opacity on mobile */
+    }
+    
+    .csfp-particle {
+        animation-duration: 80s; /* Even slower on mobile */
+        filter: blur(0.3px); /* Less blur on mobile for performance */
+    }
+    
+    .csfp-particle:nth-child(even) {
+        animation-duration: 90s;
+    }
+    
+    .csfp-particle:nth-child(3n) {
+        animation-duration: 100s;
+    }
+}
+
+/* Ensure particles don't interfere with content */
+.csfp-container > *:not(.csfp-particles) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Performance optimization for low-end devices */
+@media (prefers-reduced-motion: reduce) {
+    .csfp-particle {
+        animation: none;
+        opacity: 0.1;
+    }
+}

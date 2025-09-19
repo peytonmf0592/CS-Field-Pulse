@@ -1,0 +1,176 @@
+/* CS Field Pulse - Enhanced Chart Legend Styles */
+
+/* Override Chart.js legend styles */
+.csfp-sentiment-chart canvas {
+    margin-bottom: 20px !important;
+}
+
+/* Custom legend container styling */
+.chartjs-legend,
+.chart-legend {
+    margin-top: 20px !important;
+    padding: 15px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Legend list styling */
+.chartjs-legend ul,
+.chart-legend ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+/* Individual legend items */
+.chartjs-legend li,
+.chart-legend li {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    border: 1px solid transparent !important;
+}
+
+.chartjs-legend li:hover,
+.chart-legend li:hover {
+    background: rgba(0, 0, 0, 0.5) !important;
+    transform: translateX(5px) !important;
+    border-color: rgba(32, 227, 123, 0.3) !important;
+}
+
+/* Hide any duplicate legend indicators */
+.chartjs-legend li span:first-child:not(:last-child),
+.chart-legend li span:first-child:not(:last-child) {
+    display: none !important;
+}
+
+/* Style the Chart.js generated rectangle */
+.chartjs-legend li span,
+.chart-legend li span {
+    vertical-align: middle !important;
+}
+
+/* Legend text */
+.chartjs-legend li span:last-child,
+.chart-legend li span:last-child {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    flex: 1 !important;
+}
+
+/* Specific colors for sentiment types */
+/* Promoter - Green */
+.chartjs-legend li:nth-child(1) span:last-child,
+.chart-legend li:nth-child(1) span:last-child {
+    color: #00ff88 !important;
+}
+
+.chartjs-legend li:nth-child(1),
+.chart-legend li:nth-child(1) {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 255, 136, 0.05) 100%) !important;
+    border-color: rgba(0, 255, 136, 0.2) !important;
+}
+
+/* Passive - Yellow */
+.chartjs-legend li:nth-child(2) span:last-child,
+.chart-legend li:nth-child(2) span:last-child {
+    color: #ffcc00 !important;
+}
+
+.chartjs-legend li:nth-child(2),
+.chart-legend li:nth-child(2) {
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%) !important;
+    border-color: rgba(255, 204, 0, 0.2) !important;
+}
+
+/* Detractor - Red */
+.chartjs-legend li:nth-child(3) span:last-child,
+.chart-legend li:nth-child(3) span:last-child {
+    color: #ff4444 !important;
+}
+
+.chartjs-legend li:nth-child(3),
+.chart-legend li:nth-child(3) {
+    background: linear-gradient(135deg, rgba(255, 68, 68, 0.1) 0%, rgba(255, 68, 68, 0.05) 100%) !important;
+    border-color: rgba(255, 68, 68, 0.2) !important;
+}
+
+/* Mobile specific adjustments */
+@media screen and (max-width: 768px) {
+    .chartjs-legend,
+    .chart-legend {
+        margin-top: 15px !important;
+        padding: 12px !important;
+    }
+    
+    .chartjs-legend li,
+    .chart-legend li {
+        padding: 12px 14px !important;
+    }
+    
+    .chartjs-legend li span:last-child,
+    .chart-legend li span:last-child {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .chartjs-legend li,
+    .chart-legend li {
+        gap: 12px !important;
+    }
+}
+
+/* Animation for legend items */
+@keyframes legendPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(32, 227, 123, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(32, 227, 123, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(32, 227, 123, 0);
+    }
+}
+
+.chartjs-legend li:active,
+.chart-legend li:active {
+    animation: legendPulse 0.5s !important;
+}
+
+/* Cool glow effect on hover */
+.chartjs-legend li:hover span:first-child,
+.chart-legend li:hover span:first-child {
+    box-shadow: 0 0 15px currentColor !important;
+}
+
+/* Percentage styling */
+.chartjs-legend li span:last-child strong,
+.chart-legend li span:last-child strong {
+    color: #20E37B !important;
+    font-size: 17px !important;
+    margin-left: 5px !important;
+}
+
+/* Count number styling */
+.chartjs-legend li span:last-child .count,
+.chart-legend li span:last-child .count {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 5px !important;
+}

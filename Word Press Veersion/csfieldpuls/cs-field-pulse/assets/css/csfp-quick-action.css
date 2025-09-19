@@ -1,0 +1,209 @@
+/* CS Field Pulse - Quick Action Buttons Priority */
+
+/* Action panel - make it the hero section */
+.csfp-action-panel {
+    background: linear-gradient(135deg, rgba(32, 227, 123, 0.1) 0%, rgba(32, 227, 123, 0.02) 100%) !important;
+    border: 1px solid rgba(32, 227, 123, 0.2) !important;
+    padding: 1.25rem !important;
+    margin: 0.75rem 1rem 1rem 1rem !important;
+    box-shadow: 0 4px 20px rgba(32, 227, 123, 0.15) !important;
+    position: relative !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
+    max-width: calc(100% - 2rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Primary Record Visit button - HERO style */
+#quick-visit-btn {
+    background: var(--csfp-green, #20E37B) !important;
+    color: var(--csfp-black, #000000) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    padding: 1.25rem 3rem !important;
+    min-height: 60px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 20px rgba(32, 227, 123, 0.4) !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    flex: 1.2 !important;
+}
+
+#quick-visit-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(32, 227, 123, 0.5) !important;
+    background: #1acc6f !important;
+}
+
+#quick-visit-btn:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 15px rgba(32, 227, 123, 0.3) !important;
+}
+
+#quick-visit-btn span:first-child {
+    font-size: 24px !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Secondary Start Market Tour button */
+#start-market-tour-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    padding: 1rem 2rem !important;
+    min-height: 52px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    transition: all 0.2s ease !important;
+    flex: 0.8 !important;
+}
+
+#start-market-tour-btn:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-1px) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Mobile optimization for instant access */
+@media (max-width: 640px) {
+    /* Remove ALL top spacing on mobile for immediate access */
+    .csfp-container {
+        padding-top: 2.5rem !important; /* Just enough for welcome bar */
+    }
+    
+    /* Navigation more compact */
+    .csfp-nav {
+        padding: 0.4rem !important;
+        padding-top: 2rem !important;
+        min-height: auto !important;
+    }
+    
+    .csfp-nav-logo {
+        height: 35px !important;
+    }
+    
+    .csfp-nav-item {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 13px !important;
+    }
+    
+    /* Action panel - immediate visibility */
+    .csfp-action-panel {
+        margin-top: 0.5rem !important;
+        padding: 1rem !important;
+        background: linear-gradient(135deg, rgba(32, 227, 123, 0.15) 0%, rgba(32, 227, 123, 0.05) 100%) !important;
+    }
+    
+    /* Mobile button container */
+    .csfp-action-panel > div {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    /* HUGE Record Visit button on mobile */
+    #quick-visit-btn {
+        width: 100% !important;
+        padding: 1.25rem !important;
+        font-size: 17px !important;
+        min-height: 56px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 16px rgba(32, 227, 123, 0.35) !important;
+    }
+    
+    #quick-visit-btn span:first-child {
+        font-size: 22px !important;
+    }
+    
+    /* Market Tour button - still accessible but secondary */
+    #start-market-tour-btn {
+        width: 100% !important;
+        padding: 0.875rem !important;
+        font-size: 15px !important;
+        min-height: 46px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Hide or minimize less critical elements */
+    .csfp-title[data-page="dashboard"] {
+        font-size: 16px !important;
+        margin: 0.3rem 0 !important;
+        opacity: 0.7 !important;
+    }
+    
+    /* Compact welcome bar */
+    .csfp-welcome-top {
+        padding: 0.3rem !important;
+        font-size: 12px !important;
+        height: 2rem !important;
+    }
+    
+    /* Move view controls down */
+    .csfp-glass.csfp-card:not(.csfp-action-panel) {
+        margin-top: 0.5rem !important;
+        padding: 0.75rem !important;
+    }
+}
+
+/* Desktop quick access */
+@media (min-width: 641px) {
+    /* Compact top section for quick access */
+    .csfp-container {
+        padding-top: 2.75rem !important;
+    }
+    
+    /* Action panel prominent placement */
+    .csfp-action-panel {
+        margin-top: 0.75rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    /* Buttons side by side on desktop */
+    .csfp-action-panel > div {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1rem !important;
+        justify-content: center !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Record Visit remains prominent */
+    #quick-visit-btn {
+        flex: 1 !important;
+        max-width: 350px !important;
+    }
+    
+    #start-market-tour-btn {
+        flex: 0.8 !important;
+        max-width: 250px !important;
+    }
+}
+
+/* Pulse animation for Record Visit button */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 6px 20px rgba(32, 227, 123, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(32, 227, 123, 0.6);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(32, 227, 123, 0.4);
+    }
+}
+
+#quick-visit-btn {
+    animation: pulse-green 3s ease-in-out infinite;
+}
+
+#quick-visit-btn:hover {
+    animation: none;
+}

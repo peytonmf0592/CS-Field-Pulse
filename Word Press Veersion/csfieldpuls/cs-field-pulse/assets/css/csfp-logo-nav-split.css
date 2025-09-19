@@ -1,0 +1,180 @@
+/* CS Field Pulse - Logo and Navigation Split Layout */
+
+/* Logo Section - Full Width Top */
+.csfp-logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.75rem 1rem 1.75rem 1rem; /* Balanced, tighter spacing */
+    position: relative;
+    width: 100%;
+    background: transparent;
+    min-height: auto;
+}
+
+/* Make logo HUGE and centered */
+.csfp-logo-section .csfp-nav-logo {
+    height: 160px !important;
+    max-height: 160px !important;
+    width: auto !important;
+    min-width: 320px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Navigation Window - Glass style with green border */
+.csfp-nav-window {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(15, 15, 15, 0.95) 100%) !important;
+    border: 1px solid rgba(32, 227, 123, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 1rem 1.5rem !important;
+    margin: 0 1rem 1rem 1rem !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    max-width: calc(100% - 2rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Navigation items container */
+.csfp-nav-items {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+/* Navigation items styling */
+.csfp-nav-window .csfp-nav-item {
+    display: inline-block !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #9AA3AF !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    background: none !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+.csfp-nav-window .csfp-nav-item:hover {
+    color: var(--csfp-green) !important;
+}
+
+.csfp-nav-window .csfp-nav-item.active {
+    color: var(--csfp-green) !important;
+    font-weight: 600 !important;
+}
+
+/* Export button styling */
+.csfp-nav-export {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    margin-left: 1rem !important;
+}
+
+.csfp-nav-export:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* User info */
+.csfp-nav-user {
+    display: flex !important;
+    align-items: center !important;
+    color: #9AA3AF !important;
+    font-size: 14px !important;
+    margin-left: auto !important;
+    padding-left: 1rem !important;
+}
+
+/* Logout button positioned in logo section */
+.csfp-logo-section .csfp-logout-top {
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 1rem !important;
+    padding: 0.4rem 1rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #9AA3AF !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    z-index: 10 !important;
+}
+
+.csfp-logo-section .csfp-logout-top:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    /* Logo section on mobile */
+    .csfp-logo-section {
+        padding: 1.5rem 1rem 1.5rem 1rem; /* Tighter spacing on mobile */
+        min-height: auto;
+    }
+    
+    .csfp-logo-section .csfp-nav-logo {
+        height: 110px !important;
+        max-height: 110px !important;
+        min-width: 260px !important;
+    }
+    
+    /* Navigation window on mobile */
+    .csfp-nav-window {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+        margin: 0 0.75rem 0.75rem 0.75rem !important;
+    }
+    
+    .csfp-nav-items {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .csfp-nav-window .csfp-nav-item {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 14px !important;
+    }
+    
+    .csfp-nav-export {
+        margin-left: 0 !important;
+        margin-top: 0.5rem !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .csfp-nav-user {
+        width: 100% !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-top: 0.5rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+/* Override old nav styles */
+.csfp-nav {
+    display: none !important;
+}
+
+/* Hide duplicate elements from old styles */
+.csfp-nav-window .csfp-logout-top {
+    display: none !important;
+}

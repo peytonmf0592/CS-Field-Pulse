@@ -1,0 +1,151 @@
+/* CS Field Pulse - Exact Icon Recreation from Screenshot */
+
+/* Icon container - exactly as shown in screenshot */
+.csfp-icon-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    background: rgba(32, 227, 123, 0.12);
+    border-radius: 4px;
+}
+
+/* Chart icon - 3 bars */
+.csfp-icon-box.chart::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 3px;
+    width: 3px;
+    height: 6px;
+    background: #20E37B;
+}
+
+.csfp-icon-box.chart::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 8px;
+    width: 3px;
+    height: 10px;
+    background: #20E37B;
+}
+
+.csfp-icon-box.chart span {
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    width: 3px;
+    height: 14px;
+    background: #20E37B;
+    display: block;
+}
+
+/* List icon for Inspectors */
+.csfp-icon-box.list::before,
+.csfp-icon-box.list::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    background: #20E37B;
+}
+
+.csfp-icon-box.list::before {
+    top: 5px;
+}
+
+.csfp-icon-box.list::after {
+    top: 10px;
+}
+
+.csfp-icon-box.list span {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: 5px;
+    height: 2px;
+    background: #20E37B;
+    display: block;
+}
+
+/* Case/briefcase icon for Adjusters */
+.csfp-icon-box.case::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 2px solid #20E37B;
+    border-radius: 2px;
+}
+
+.csfp-icon-box.case::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    right: 7px;
+    height: 5px;
+    border: 1px solid #20E37B;
+    border-bottom: none;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Clock icon for Visits */
+.csfp-icon-box.clock::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 2px solid #20E37B;
+    border-radius: 50%;
+}
+
+.csfp-icon-box.clock::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 5px;
+    background: #20E37B;
+    transform-origin: bottom;
+    transform: translate(-50%, -100%);
+}
+
+.csfp-icon-box.clock span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 1px;
+    background: #20E37B;
+    transform-origin: left;
+    transform: translate(0, -50%);
+    display: block;
+}
+
+/* Page title specific styling */
+.csfp-page-title .csfp-icon-box {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+/* Orange text style matching screenshot */
+.csfp-page-title {
+    color: #FFA500 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}

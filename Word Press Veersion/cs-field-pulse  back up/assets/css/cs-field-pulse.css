@@ -1,0 +1,29 @@
+ /**
+ * CS Field Pulse Main Styles
+ * Based on the Potea app design with dark theme and green accents
+ */
+
+/* This file is for any potential public-facing styles */
+/* Currently, the plugin is admin-only, so this file is minimal */
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variables */
+:root {
+    --cs-primary-bg: #121212;
+    --cs-secondary-bg: #1E1E1E;
+    --cs-card-bg: #242424;
+    --cs-primary-accent: #00E676;
+    --cs-secondary-accent: #00C853;
+    --cs-text-primary: #FFFFFF;
+    --cs-text-secondary: #B0B0B0;
+    --cs-success: #00E676;
+    --cs-warning: #FFD600;
+    --cs-danger: #FF5252;
+}
+
+/* Base styling for any potential public elements */
+.cs-field-pulse {
+    font-family: 'Poppins', sans-serif;
+}

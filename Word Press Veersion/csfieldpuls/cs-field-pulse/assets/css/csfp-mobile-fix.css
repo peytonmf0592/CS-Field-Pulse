@@ -1,0 +1,363 @@
+/* CS Field Pulse - Mobile Charts, Map & Layout Fixes */
+/* Targets iOS Safari ≤640px without affecting desktop */
+
+/* ========================================
+   Chart Styles - Mobile Optimized
+   ======================================== */
+@media (max-width: 640px) {
+    /* Chart containers - prevent clipping */
+    .csfp-chart-container-compact,
+    .csfp-glass.csfp-chart-container-compact {
+        overflow: visible !important;
+        padding: 1rem;
+        padding-bottom: 2rem; /* Room for legend */
+        margin-bottom: 1rem;
+    }
+    
+    /* Chart wrapper */
+    .csfp-chart-wrapper-compact {
+        width: 100%;
+        height: 280px;
+        position: relative;
+        overflow: visible !important;
+    }
+    
+    /* SVG charts */
+    .csfp-chart-svg {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        overflow: visible;
+    }
+    
+    /* Chart legend */
+    .csfp-chart-legend {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        margin-top: 1rem;
+        padding: 0.75rem 0;
+        width: 100%;
+    }
+    
+    .csfp-legend-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+        color: #9AA3AF;
+    }
+    
+    .csfp-legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        margin-bottom: 4px;
+    }
+    
+    .csfp-legend-label {
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 2px;
+    }
+    
+    .csfp-legend-value {
+        font-size: 11px;
+        color: #6B7280;
+    }
+    
+    /* Chart center text */
+    .csfp-chart-center-text {
+        pointer-events: none;
+    }
+    
+    .csfp-chart-center-label {
+        pointer-events: none;
+    }
+    
+    /* Chart tooltip */
+    .csfp-chart-tooltip {
+        position: absolute;
+        background: rgba(26, 26, 26, 0.95);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        pointer-events: none;
+        z-index: 10000;
+        display: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .csfp-chart-tooltip strong {
+        color: var(--csfp-green, #20E37B);
+    }
+    
+    /* Ensure charts fill their containers on mobile */
+    #inspector-sentiment-chart,
+    #adjuster-sentiment-chart {
+        width: 100%;
+        min-height: 280px;
+    }
+}
+
+/* ========================================
+   Map Styles - Mobile Optimized
+   ======================================== */
+@media (max-width: 640px) {
+    /* Map wrapper */
+    .csfp-map-wrap {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 1rem 0;
+        background: #1a1a1a;
+    }
+    
+    /* Map container */
+    #csfp-map {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #0a0a0a !important; /* Dark background */
+        /* Fix fuzzy rendering on retina displays */
+        image-rendering: crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Google Maps specific fixes for clarity */
+    #csfp-map img {
+        image-rendering: auto !important;
+        max-width: none !important;
+    }
+    
+    #csfp-map .gm-style img {
+        max-width: none !important;
+    }
+    
+    /* Map guard overlay */
+    .csfp-map-guard {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.15);
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 2;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        transition: all 0.2s ease;
+    }
+    
+    .csfp-map-guard:hover {
+        background: rgba(0, 0, 0, 0.25);
+    }
+    
+    .csfp-map-guard-text {
+        padding: 0.75rem 1.5rem;
+        background: rgba(26, 26, 26, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Map container for mobile */
+    .csfp-map-container-compact {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .csfp-map-compact {
+        height: 320px;
+        width: 100%;
+    }
+}
+
+/* ========================================
+   Panel/Card Clipping Fixes
+   ======================================== */
+@media (max-width: 640px) {
+    /* Prevent all clipping */
+    .csfp-card,
+    .csfp-panel,
+    .csfp-glass {
+        overflow: visible !important;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Sentiment cards specific */
+    .sentiment-card {
+        overflow: visible !important;
+        padding-bottom: 12px;
+    }
+    
+    .sentiment-card .recharts-wrapper {
+        overflow: visible !important;
+    }
+    
+    /* Dashboard panels */
+    .csfp-dashboard-compact {
+        overflow: visible !important;
+    }
+    
+    .csfp-dashboard-main,
+    .csfp-dashboard-sidebar {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+}
+
+/* ========================================
+   KPI Grid - 2-up Layout
+   ======================================== */
+@media (max-width: 640px) {
+    .csfp-stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        margin: 1rem 0;
+    }
+    
+    .csfp-stat-card {
+        min-width: 0 !important;
+        padding: 1rem 0.75rem;
+        text-align: center;
+    }
+    
+    .csfp-stat-number {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        word-break: break-word;
+        line-height: 1.2;
+    }
+    
+    .csfp-stat-label {
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+        word-break: break-word;
+        margin-top: 0.5rem;
+    }
+    
+    /* Single column on very narrow screens */
+    @media (max-width: 380px) {
+        .csfp-stats-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+}
+
+/* ========================================
+   Action Toolbar - Grid Layout
+   ======================================== */
+@media (max-width: 640px) {
+    /* Toolbar container */
+    .csfp-toolbar,
+    .csfp-dashboard-actions,
+    .csfp-glass.csfp-card > div[style*="display: flex"]:last-child {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+    
+    /* All action buttons */
+    .csfp-export-btn,
+    .csfp-btn-export,
+    #csfp-export-visits,
+    .csfp-record-btn,
+    .csfp-btn-record,
+    #quick-visit-btn,
+    .csfp-tour-btn,
+    .csfp-btn-tour,
+    #start-market-tour-btn {
+        min-width: 0 !important;
+        width: 100% !important;
+        white-space: normal !important;
+        padding: 0.75rem 0.5rem !important;
+        min-height: 44px;
+    }
+    
+    /* Button text wrapping */
+    .csfp-btn span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/* ========================================
+   Charts Row - Mobile Stack
+   ======================================== */
+@media (max-width: 640px) {
+    .csfp-charts-row-compact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .csfp-charts-row-compact > * {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* ========================================
+   Accessibility Improvements
+   ======================================== */
+@media (max-width: 640px) {
+    /* Focus states for touch */
+    .arc:focus,
+    .csfp-legend-item:focus {
+        outline: 2px solid var(--csfp-green, #20E37B);
+        outline-offset: 2px;
+    }
+    
+    /* Chart ARIA labels */
+    .csfp-chart-svg[aria-label] {
+        position: relative;
+    }
+    
+    /* Legend keyboard navigation */
+    .csfp-legend-item {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    .csfp-legend-item:hover,
+    .csfp-legend-item:focus {
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   Performance Optimizations
+   ======================================== */
+@media (max-width: 640px) {
+    /* Reduce animations on mobile */
+    .arc {
+        transition: d 0.2s ease !important;
+    }
+    
+    /* Hardware acceleration */
+    .csfp-chart-svg,
+    .csfp-map-wrap {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    /* Prevent layout shifts */
+    .csfp-chart-container-compact {
+        contain: layout;
+    }
+}

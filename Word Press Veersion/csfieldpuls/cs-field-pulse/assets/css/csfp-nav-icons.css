@@ -1,0 +1,54 @@
+/* CS Field Pulse - Navigation Icons Styling */
+
+/* Navigation icon styling */
+.csfp-nav-item .nav-icon {
+    display: inline-block !important;
+    margin-right: 6px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    text-shadow: none !important;
+}
+
+/* Ensure no background on spans */
+.csfp-nav-item span {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Active state icon color */
+.csfp-nav-item.active .nav-icon {
+    filter: brightness(1.2);
+}
+
+/* Hover effect on icons */
+.csfp-nav-item:hover .nav-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Export button special styling */
+.csfp-nav-export .nav-icon {
+    color: inherit !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .csfp-nav-item .nav-icon {
+        font-size: 18px !important;
+        margin-right: 8px !important;
+    }
+}
+
+/* Remove any conflicting styles */
+.csfp-nav-window .icon,
+.csfp-nav-window [class*="icon"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}

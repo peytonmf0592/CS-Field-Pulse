@@ -1,0 +1,76 @@
+/* CS Field Pulse - Chart Mobile Touch Improvements */
+
+/* Prevent text selection on chart containers */
+.csfp-chart-container,
+.csfp-sentiment-chart,
+.csfp-chart-card,
+canvas {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    tap-highlight-color: transparent !important;
+}
+
+/* Disable highlighting on touch */
+.csfp-chart-container:active,
+.csfp-sentiment-chart:active,
+.csfp-chart-card:active {
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+/* Prevent default touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .csfp-chart-container,
+    .csfp-sentiment-chart,
+    .csfp-chart-card {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+    }
+    
+    /* Ensure charts are not selectable */
+    .csfp-chart-container canvas {
+        pointer-events: auto !important;
+        touch-action: auto !important;
+    }
+    
+    /* Remove any focus outlines on mobile */
+    .csfp-chart-container:focus,
+    .csfp-sentiment-chart:focus,
+    .csfp-chart-card:focus,
+    canvas:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .csfp-chart-container,
+    .csfp-sentiment-chart,
+    .csfp-chart-card,
+    canvas {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+    }
+}
+
+/* Ensure proper z-index for tooltips */
+.chartjs-tooltip {
+    z-index: 10000 !important;
+    pointer-events: none !important;
+}
+
+/* Mobile-specific tooltip adjustments */
+@media screen and (max-width: 768px) {
+    /* Force tooltips to appear above touch point */
+    div[style*="chartjs-tooltip"] {
+        transform: translateY(-20px) !important;
+    }
+}

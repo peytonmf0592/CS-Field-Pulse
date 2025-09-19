@@ -1,0 +1,83 @@
+/* CS Field Pulse - Clean 3D Tesseract Icons */
+
+/* Clean icon container - no blur */
+.csfp-hex-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    vertical-align: middle;
+    position: relative;
+}
+
+/* Dashboard - Clean 3D tesseract with bar chart */
+.csfp-hex-icon.dashboard {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3C!-- 3D Cube/Tesseract --%3E%3C!-- Back face --%3E%3Cpath d='M5 7 L20 7 L20 20 L5 20 Z' fill='none' stroke='%2320E37B' stroke-width='0.8' opacity='0.4'/%3E%3C!-- Front face --%3E%3Cpath d='M10 10 L25 10 L25 23 L10 23 Z' fill='none' stroke='%2320E37B' stroke-width='1.2'/%3E%3C!-- Connecting lines --%3E%3Cline x1='5' y1='7' x2='10' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='7' x2='25' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='20' x2='25' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='5' y1='20' x2='10' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3C!-- Bar chart --%3E%3Crect x='13' y='18' width='2' height='4' fill='%2320E37B'/%3E%3Crect x='16.5' y='15' width='2' height='7' fill='%2320E37B'/%3E%3Crect x='20' y='16' width='2' height='6' fill='%2320E37B'/%3E%3C/svg%3E");
+}
+
+/* Inspectors - Clean 3D tesseract with ladder */
+.csfp-hex-icon.inspectors {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3C!-- 3D Cube/Tesseract --%3E%3C!-- Back face --%3E%3Cpath d='M5 7 L20 7 L20 20 L5 20 Z' fill='none' stroke='%2320E37B' stroke-width='0.8' opacity='0.4'/%3E%3C!-- Front face --%3E%3Cpath d='M10 10 L25 10 L25 23 L10 23 Z' fill='none' stroke='%2320E37B' stroke-width='1.2'/%3E%3C!-- Connecting lines --%3E%3Cline x1='5' y1='7' x2='10' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='7' x2='25' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='20' x2='25' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='5' y1='20' x2='10' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3C!-- Ladder --%3E%3Cline x1='15' y1='13' x2='15' y2='20' stroke='%2320E37B' stroke-width='1.5'/%3E%3Cline x1='20' y1='13' x2='20' y2='20' stroke='%2320E37B' stroke-width='1.5'/%3E%3Cline x1='15' y1='15' x2='20' y2='15' stroke='%2320E37B' stroke-width='1'/%3E%3Cline x1='15' y1='17' x2='20' y2='17' stroke='%2320E37B' stroke-width='1'/%3E%3Cline x1='15' y1='19' x2='20' y2='19' stroke='%2320E37B' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Adjusters - Clean 3D tesseract with briefcase */
+.csfp-hex-icon.adjusters {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3C!-- 3D Cube/Tesseract --%3E%3C!-- Back face --%3E%3Cpath d='M5 7 L20 7 L20 20 L5 20 Z' fill='none' stroke='%2320E37B' stroke-width='0.8' opacity='0.4'/%3E%3C!-- Front face --%3E%3Cpath d='M10 10 L25 10 L25 23 L10 23 Z' fill='none' stroke='%2320E37B' stroke-width='1.2'/%3E%3C!-- Connecting lines --%3E%3Cline x1='5' y1='7' x2='10' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='7' x2='25' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='20' x2='25' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='5' y1='20' x2='10' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3C!-- Briefcase --%3E%3Cpath d='M13 15 L13 20 L22 20 L22 15 M16 15 L16 13 L19 13 L19 15' stroke='%2320E37B' stroke-width='1.2' fill='none'/%3E%3C!-- Checkmark --%3E%3Cpath d='M15 18 L16.5 19.5 L20 16' stroke='%2320E37B' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Visits - Clean 3D tesseract with clock */
+.csfp-hex-icon.visits {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3C!-- 3D Cube/Tesseract --%3E%3C!-- Back face --%3E%3Cpath d='M5 7 L20 7 L20 20 L5 20 Z' fill='none' stroke='%2320E37B' stroke-width='0.8' opacity='0.4'/%3E%3C!-- Front face --%3E%3Cpath d='M10 10 L25 10 L25 23 L10 23 Z' fill='none' stroke='%2320E37B' stroke-width='1.2'/%3E%3C!-- Connecting lines --%3E%3Cline x1='5' y1='7' x2='10' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='7' x2='25' y2='10' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='20' y1='20' x2='25' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3Cline x1='5' y1='20' x2='10' y2='23' stroke='%2320E37B' stroke-width='0.8' opacity='0.6'/%3E%3C!-- Clock --%3E%3Ccircle cx='17.5' cy='16.5' r='5' fill='none' stroke='%2320E37B' stroke-width='1.2'/%3E%3Cpath d='M17.5 14 L17.5 16.5 L19.5 18.5' stroke='%2320E37B' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Simple subtle glow - no blur */
+.csfp-hex-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 6px rgba(32, 227, 123, 0.3);
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Page title - orange text */
+.csfp-page-title {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #FF8C42 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* Clean page header */
+.csfp-page-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 1.2rem 0 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Hover effect - subtle */
+.csfp-hex-icon:hover::after {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(32, 227, 123, 0.5);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .csfp-hex-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .csfp-page-title {
+        font-size: 20px !important;
+    }
+}

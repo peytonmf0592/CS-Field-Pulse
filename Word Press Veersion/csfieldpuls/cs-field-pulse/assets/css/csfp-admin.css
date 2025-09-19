@@ -1,0 +1,39 @@
+/**
+ * CS Field Pulse Admin Styles
+ */
+
+/* Action buttons */
+#csfp-create-pages {
+    background: #00a32a !important;
+    border-color: #00a32a !important;
+}
+
+#csfp-create-pages:hover {
+    background: #008a20 !important;
+}
+
+#csfp-delete-demo {
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+}
+
+#csfp-delete-demo:hover {
+    background: #b32d2e !important;
+}
+
+/* Status indicators */
+.widefat td code {
+    background: #f0f0f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Result messages */
+#csfp-action-result {
+    margin-top: 1rem;
+}
+
+#csfp-action-result .notice {
+    margin: 0;
+}

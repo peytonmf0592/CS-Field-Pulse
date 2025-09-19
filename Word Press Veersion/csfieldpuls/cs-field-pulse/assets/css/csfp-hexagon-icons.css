@@ -1,0 +1,75 @@
+/* CS Field Pulse - Exact Hexagon Icons from Screenshots */
+
+/* Hexagon icon container */
+.csfp-hex-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Dashboard - Chart bars in hexagon */
+.csfp-hex-icon.dashboard {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z' fill='none' stroke='%2320E37B' stroke-width='1.5'/%3E%3Crect x='7' y='12' width='2' height='5' fill='%2320E37B'/%3E%3Crect x='11' y='9' width='2' height='8' fill='%2320E37B'/%3E%3Crect x='15' y='10' width='2' height='7' fill='%2320E37B'/%3E%3C/svg%3E");
+}
+
+/* Inspectors - Ladder/list in hexagon */
+.csfp-hex-icon.inspectors {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z' fill='none' stroke='%2320E37B' stroke-width='1.5'/%3E%3Cpath d='M8 8 L16 8 M8 12 L16 12 M8 16 L13 16' stroke='%2320E37B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Adjusters - Case/folder in hexagon */
+.csfp-hex-icon.adjusters {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z' fill='none' stroke='%2320E37B' stroke-width='1.5'/%3E%3Cpath d='M8 9 L8 16 L16 16 L16 9 M10 9 L10 7 L14 7 L14 9' stroke='%2320E37B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Visits - Clock in hexagon */
+.csfp-hex-icon.visits {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z' fill='none' stroke='%2320E37B' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='5' fill='none' stroke='%2320E37B' stroke-width='1.5'/%3E%3Cpath d='M12 9 L12 12 L14 14' stroke='%2320E37B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Page title styling to match screenshot */
+.csfp-page-title {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #FF9500 !important; /* Orange like in screenshot */
+    margin: 0 !important;
+    padding: 0 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+/* Larger size for page headers */
+.csfp-page-header .csfp-hex-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+}
+
+/* Remove any old styles */
+.csfp-page-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 1rem 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .csfp-hex-icon {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .csfp-page-header .csfp-hex-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

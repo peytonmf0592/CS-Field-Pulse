@@ -1,0 +1,85 @@
+/* CS Field Pulse - Tesseract Icon Design */
+
+/* Icon container - matching screenshot exactly */
+.csfp-tesseract {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    background: rgba(32, 227, 123, 0.15);
+    border: 1px solid rgba(32, 227, 123, 0.4);
+    border-radius: 6px;
+}
+
+/* Icon inside container */
+.csfp-tesseract-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Dashboard - Bar chart icon */
+.csfp-tesseract-chart .csfp-tesseract-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320E37B'%3E%3Crect x='3' y='12' width='4' height='9' /%3E%3Crect x='10' y='5' width='4' height='16' /%3E%3Crect x='17' y='8' width='4' height='13' /%3E%3C/svg%3E");
+}
+
+/* Inspectors - Ladder/Steps icon */
+.csfp-tesseract-ladder .csfp-tesseract-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320E37B'%3E%3Cpath d='M7 3L9 3L9 7L15 7L15 3L17 3L17 21L15 21L15 17L9 17L9 21L7 21L7 3ZM9 9L9 15L15 15L15 9L9 9Z'/%3E%3C/svg%3E");
+}
+
+/* Adjusters - Briefcase with checkmark */
+.csfp-tesseract-briefcase .csfp-tesseract-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320E37B'%3E%3Cpath d='M10 2h4c1.1 0 2 .9 2 2v2h4c1.1 0 2 .9 2 2v11c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 2v2h4V4h-4zm1 8l-3 3 1.5 1.5L11 15l4-4-1.5-1.5L11 12z'/%3E%3C/svg%3E");
+}
+
+/* Visits - Clock icon */
+.csfp-tesseract-clock .csfp-tesseract-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2320E37B'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%2320E37B' stroke-width='2'/%3E%3Cpath d='M12 7v5l3 3' stroke='%2320E37B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Page header icons - same size */
+.csfp-page-title .csfp-tesseract {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+
+.csfp-page-title .csfp-tesseract-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Subtle hover effect */
+.csfp-tesseract:hover {
+    background: rgba(32, 227, 123, 0.2);
+}
+
+/* Active state */
+.active .csfp-tesseract {
+    background: rgba(32, 227, 123, 0.25);
+    border-color: rgba(32, 227, 123, 0.6);
+}
+
+/* No animation - static like in screenshot */
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .csfp-tesseract {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .csfp-page-title .csfp-tesseract {
+        width: 34px;
+        height: 34px;
+    }
+}
