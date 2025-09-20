@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -18,6 +18,20 @@ export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false)
   const router = useRouter()
   const supabase = createClient()
+
+  // Listen for 'd' key press to fill demo credentials
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === 'd' || e.key === 'D') {
+        setEmail('demo@example.com')
+        setPassword('demo1234')
+        toast.success('Demo credentials filled!')
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [])
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -97,7 +111,7 @@ export default function LoginPage() {
               </p>
               <div className="mt-4 px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-lg">
                 <p className="text-sm text-orange-400">
-                  Demo Mode: Click Sign In with any credentials
+                  Demo Mode: Press 'D' to fill demo credentials
                 </p>
               </div>
             </div>
