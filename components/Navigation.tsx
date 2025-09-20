@@ -6,12 +6,11 @@ import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
-import { 
-  Home, 
-  Calendar, 
-  Users, 
-  BarChart3, 
-  Settings, 
+import {
+  Home,
+  Calendar,
+  Users,
+  BarChart3,
   LogOut,
   Menu,
   X

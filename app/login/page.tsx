@@ -111,7 +111,7 @@ export default function LoginPage() {
               </p>
               <div className="mt-4 px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-lg">
                 <p className="text-sm text-orange-400">
-                  Demo Mode: Press 'D' to fill demo credentials
+                  Demo Mode: Press &apos;D&apos; to fill demo credentials
                 </p>
               </div>
             </div>
